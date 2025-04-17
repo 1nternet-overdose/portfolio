@@ -1,0 +1,94 @@
+'use client';
+
+import Image from "next/image";
+import { notFound } from "next/navigation";
+import { motion } from "framer-motion";
+
+// 動的パラメータ型
+type Props = {
+  params: { slug: string };
+};
+
+// 事前ビルド用のデータ
+const circleData: Record<string, { title: string; image: string; description: string }> = {
+  "poster-2025-04": {
+    title: "サークル紹介ポスター",
+    image: "/poster-2025-04.png",
+    description: "説明文",
+  },
+  "flyer-2025-04": {
+    title: "新歓用配布チラシ",
+    image: "/flyer-2025-04.png",
+    description: "説明文",
+  },
+  "card-2024-11": {
+    title: "文化祭カード（2024年版）",
+    image: "/card-2024-11.png",
+    description: "説明文",
+  },
+  "circle-d": {
+    title: "タイトルD",
+    image: "/noimage.png",
+    description: "紹介文D",
+  },
+  "circle-e": {
+    title: "タイトルE",
+    image: "/noimage.png",
+    description: "紹介文E",
+  },
+  "circle-f": {
+    title: "タイトルF",
+    image: "/noimage.png",
+    description: "紹介文F",
+  },
+  "circle-g": {
+    title: "タイトルG",
+    image: "/noimage.png",
+    description: "紹介文G",
+  },
+  "circle-h": {
+    title: "タイトルH",
+    image: "/noimage.png",
+    description: "紹介文H",
+  },
+};
+
+export default function WorkDetailPage({ params }: { params: { slug: string } }) {
+  const slug = params.slug as keyof typeof circleData;
+
+  const work = circleData[slug];
+  if (!work) notFound();
+
+  return (
+    <motion.div
+      className="max-6xl mx-auto px-4 py-16"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      <div className="grid md:grid-cols-2 gap-18 items-start">
+        {/* 左側：画像 */}
+        <div className="w-full">
+          <Image
+            src={work.image}
+            alt={work.title}
+            width={800}
+            height={1200}
+            className="w-full h-auto object-contain rounded shadow"
+          />
+        </div>
+      
+        {/* 右側：タイトル・説明 */}
+        <div>
+          <h1 className="text-3xl font-bold mb-4">{work.title}</h1>
+          <p className="text-gray-700 leading-relaxed">{work.description}</p>
+        </div>
+      </div>
+    
+      {/* トップに戻る */}
+      <a href="/" className="text-blue-500 hover:underline block mt-12 text-center">
+        ← トップに戻る
+      </a>
+    </motion.div>
+  );
+}
