@@ -25,7 +25,7 @@ export default function CircleCard({ title, image, description, slug }: CircleCa
         <p className="text-sm">{description}</p>
       </div>
 
-      {/* タイトル（現在は非表示） */}
+      {/* タイトル（現在非表示） */}
       {/*
       <div className="bg-white px-3 py-2 text-sm font-semibold text-gray-800">
         {title}
