@@ -30,10 +30,11 @@ const devItems = [
 const circleItems = [
   // { title: "作品タイトル（非表示）", image: "サムネイル画像のパス（publicディレクトリ基準）", description: "概要", slug: "動的ルーティングでURLの末尾として使用される一意の識別子" }
   { title: "poster-2025-04", image: "/poster-2025-04.png", description: "サークル紹介ポスター", slug: "poster-2025-04" },
-  { title: "flyer-2025-04", image: "/flyer-2025-04.png", description: "新歓用配布チラシ", slug: "flyer-2025-04" },
+  // { title: "flyer-2025-04", image: "/flyer-2025-04.png", description: "新歓用配布チラシ", slug: "flyer-2025-04" },
+  { title: "poster-2025-05", image: "/poster-2025-05.png", description: "文化の祭典ポスター", slug: "poster-2025-05" },
+  // { title: "flyer-2025-05", image: "/flyer-2025-05.png", description: "文化の祭典チラシ", slug: "flyer-2025-05" },
   { title: "card-2024-11", image: "/card-2024-11.png", description: "文化祭カード（2024年版）", slug: "card-2024-11" },
-  { title: "タイトルD", image: "/noimage.png", description: "紹介文D", slug: "circle-d" },
-  { title: "タイトルE", image: "/noimage.png", description: "紹介文E", slug: "circle-e" },
+  { title: "name_tag-2025-05", image: "/name_tag-2025-05.png", description: "サークル名札", slug: "name_tag-2025-05" },
   { title: "タイトルF", image: "/noimage.png", description: "紹介文F", slug: "circle-f" },
   { title: "タイトルG", image: "/noimage.png", description: "紹介文G", slug: "circle-g" },
   { title: "タイトルH", image: "/noimage.png", description: "紹介文H", slug: "circle-h" },
@@ -84,7 +85,7 @@ export default function Home() {
         {/* プロフィール画像 */}
         <Image
           // プロフィール画像のパス（publicディレクトリ基準）
-          src="/profile.png"
+          src="/profile.jpg"
           // 画像が読み込めなかった場合に表示される代替テキスト（アクセシビリティ対応）
           alt="プロフィール画像"
           // 表示幅（px）
@@ -105,7 +106,11 @@ export default function Home() {
         </h1>
 
         {/* 自己紹介文 */}
-        <p className="text-lg text-gray-600 max-w-xl">自己紹介文</p>
+        <p className="text-lg text-gray-600 max-w-xl">
+          千葉工業大学 情報科学部 情報工学科 3年
+        <br/>
+          ゲームサークル副部長・軽音楽部部員
+        </p>
 
         {/* GitHubリンク */}
         <div className="flex justify-center mt-10">
@@ -130,8 +135,56 @@ export default function Home() {
         viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <h2 className="text-3xl font-semibold mb-4">概要</h2>
-        <p className="text-gray-700 text-base leading-relaxed">紹介文</p>
+        <h2 className="text-3xl font-semibold mb-4">このポートフォリオについて</h2>
+        <p className="text-gray-700 text-base leading-relaxed">
+          このポートフォリオは、大学でのサークル活動におけるデザイン制作の
+          <br/>
+          成果を体系的にまとめ、可視化・発信するために制作したものです。
+        <br/>
+        <br/>
+          私は情報科学部情報工学科に所属しており、主にプログラミングやアルゴリズム、
+          <br/>
+          ネットワークなどの理工系分野を専門的に学んできました。
+          <br/>
+          そのため、講義や課題を通してデザイン分野のアウトプットを直接評価されたり、
+          <br/>
+          発表したりする機会は多くありませんでした。
+        <br/>
+        <br/>
+          サークル活動では、ポスターやチラシなど、複数のデザイン制作に携わってきました。
+          <br/>
+          そうした制作物や経験を、「技術」と「表現」の両面から自己アピールに活かしたいと考え、
+          <br/>
+          このポートフォリオサイトを立ち上げました。
+        <br/>
+        <br/>
+          開発にはReactベースのフレームワークであるNext.jsを用い、
+          <br/>
+          TypeScriptによる型安全な記述を採用し、静的型チェックを導入することで、
+          <br/>
+          保守性と信頼性の高いコードベースを構築しています。
+          <br/>
+          フロントエンドのUIにはTailwind CSSを導入することで、
+          <br/>
+          デザインの一貫性を保ちながら素早いスタイリングを実現しています。
+          <br/>
+          また、framer-motionを使用して各セクションに動きを持たせることで、
+          <br/>
+          閲覧者にとって心地よいUXを提供することを意識しました。
+        <br/>
+        <br/>
+          GitHubとの連携を通じて、開発者としての側面も同時にアピールできるように設計しました。
+        <br/>
+        <br/>
+          このポートフォリオは単なる成果物の展示にとどまらず、情報科学の知見と
+          <br/>
+          デザイン経験を横断的に活かしながら、主体的に表現する力を示すための場です。
+        <br/>
+        <br/>
+          就職活動において、デザイン×技術の両面から
+          <br/>
+          自分を伝える媒体として活用することを目指しています。
+        </p>
       </motion.section>
 
       {/* 個人開発 - WorkCardコンポーネントを利用 */}

@@ -21,19 +21,24 @@ const circleData: Record<string, { title: string; image: string; description: st
     image: "/flyer-2025-04.png",
     description: "説明文",
   },
+  "poster-2025-05": {
+    title: "文化の祭典ポスター",
+    image: "/poster-2025-05.png",
+    description: "紹介文D",
+  },
+  "flyer-2025-05": {
+    title: "文化の祭典チラシ",
+    image: "/flyer-2025-05.png",
+    description: "説明文",
+  },
   "card-2024-11": {
     title: "文化祭カード（2024年版）",
     image: "/card-2024-11.png",
     description: "説明文",
   },
-  "circle-d": {
-    title: "タイトルD",
-    image: "/noimage.png",
-    description: "紹介文D",
-  },
-  "circle-e": {
-    title: "タイトルE",
-    image: "/noimage.png",
+  "name_tag-2025-05": {
+    title: "サークル名札",
+    image: "/name_tag-2025-05.png",
     description: "紹介文E",
   },
   "circle-f": {
