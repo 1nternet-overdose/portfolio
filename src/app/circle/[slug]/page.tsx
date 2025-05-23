@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-// データ定義
+// 事前ビルド用のデータ
 const circleData: Record<string, { title: string; image: string; description: string }> = {
   "poster-2025-04": {
     title: "サークル紹介ポスター",
@@ -52,12 +52,7 @@ const circleData: Record<string, { title: string; image: string; description: st
   },
 };
 
-// 修正済みのページコンポーネント
-export default async function WorkDetailPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default function Page({ params }: { params: { slug: string } }) {
   const slug = params.slug as keyof typeof circleData;
   const work = circleData[slug];
   if (!work) notFound();

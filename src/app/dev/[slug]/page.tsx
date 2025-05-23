@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-// データ定義
+// 事前ビルド用のデータ
 const devData: Record<string, { title: string; image: string; description: string }> = {
   "dev-a": {
     title: "小見出しA",
@@ -25,18 +25,9 @@ const devData: Record<string, { title: string; image: string; description: strin
     image: "/noimage.png",
     description: "紹介文D",
   },
-  "dev-e": {
-    title: "小見出しE",
-    image: "/noimage.png",
-    description: "紹介文E",
-  },
 };
 
-export default async function DevDetailPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default function Page({ params }: { params: { slug: string } }) {
   const slug = params.slug as keyof typeof devData;
   const work = devData[slug];
   if (!work) notFound();
