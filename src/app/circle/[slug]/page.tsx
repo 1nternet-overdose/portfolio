@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 // 動的パラメータ型
 type Props = {
@@ -91,9 +92,9 @@ export default function WorkDetailPage({ params }: { params: { slug: string } })
       </div>
     
       {/* トップに戻る */}
-      <a href="/" className="text-blue-500 hover:underline block mt-12 text-center">
+      <Link href="/" className="text-blue-500 hover:underline block mt-12 text-center">
         ← トップに戻る
-      </a>
+      </Link>
     </motion.div>
   );
 }
