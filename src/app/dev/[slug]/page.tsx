@@ -3,11 +3,11 @@ import { notFound } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-// 動的パラメータ型（Promiseで包む）
+// 動的パラメータ型
 type PageProps = {
-  params: Promise<{
+  params: {
     slug: string;
-  }>;
+  };
 };
 
 // 事前ビルド用のデータ
@@ -34,12 +34,8 @@ const devData: Record<string, { title: string; image: string; description: strin
   },
 };
 
-export async function generateStaticParams() {
-  return Object.keys(devData).map((slug) => ({ slug }));
-}
-
-export default async function WorkDetailPage(props: PageProps) {
-  const params = await props.params;
+// メインページ
+export default function WorkDetailPage({ params }: PageProps) {
   const slug = params.slug as keyof typeof devData;
   const work = devData[slug];
 
@@ -77,4 +73,9 @@ export default async function WorkDetailPage(props: PageProps) {
       </Link>
     </motion.div>
   );
+}
+
+// 動的ルートの静的生成用（SSG）
+export function generateStaticParams() {
+  return Object.keys(devData).map((slug) => ({ slug }));
 }

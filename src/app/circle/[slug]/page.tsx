@@ -3,11 +3,11 @@ import { notFound } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-// 動的パラメータ型（Promiseで包む）
+// 動的パラメータ型
 type PageProps = {
-  params: Promise<{
+  params: {
     slug: string;
-  }>;
+  };
 };
 
 // データ定義
@@ -59,8 +59,8 @@ const circleData: Record<string, { title: string; image: string; description: st
   },
 };
 
-export default async function WorkDetailPage(props: PageProps) {
-  const params = await props.params;
+// メインページ
+export default function WorkDetailPage({ params }: PageProps) {
   const slug = params.slug as keyof typeof circleData;
   const work = circleData[slug];
 
@@ -98,4 +98,9 @@ export default async function WorkDetailPage(props: PageProps) {
       </Link>
     </motion.div>
   );
+}
+
+// 動的ルートの静的生成用（SSG）
+export function generateStaticParams() {
+  return Object.keys(circleData).map((slug) => ({ slug }));
 }
