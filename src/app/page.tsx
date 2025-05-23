@@ -29,15 +29,15 @@ const devItems = [
 // サークル活動セクションのデータ配列
 const circleItems = [
   // { title: "作品タイトル（非表示）", image: "サムネイル画像のパス（publicディレクトリ基準）", description: "概要", slug: "動的ルーティングでURLの末尾として使用される一意の識別子" }
-  { title: "poster-2025-04", image: "/poster-2025-04.png", description: "サークル紹介ポスター", slug: "poster-2025-04" },
-  // { title: "flyer-2025-04", image: "/flyer-2025-04.png", description: "新歓用配布チラシ", slug: "flyer-2025-04" },
-  { title: "poster-2025-05", image: "/poster-2025-05.png", description: "文化の祭典ポスター", slug: "poster-2025-05" },
-  // { title: "flyer-2025-05", image: "/flyer-2025-05.png", description: "文化の祭典チラシ", slug: "flyer-2025-05" },
-  { title: "card-2024-11", image: "/card-2024-11.png", description: "文化祭カード（2024年版）", slug: "card-2024-11" },
-  { title: "name_tag-2025-05", image: "/name_tag-2025-05.png", description: "サークル名札", slug: "name_tag-2025-05" },
-  { title: "タイトルF", image: "/noimage.png", description: "紹介文F", slug: "circle-f" },
-  { title: "タイトルG", image: "/noimage.png", description: "紹介文G", slug: "circle-g" },
-  { title: "タイトルH", image: "/noimage.png", description: "紹介文H", slug: "circle-h" },
+  { title: "サークル紹介ポスター", image: "/poster-2025-04.png", description: "サークル紹介ポスター", slug: "poster-2025-04" },
+  // { title: "新歓用配布チラシ", image: "/flyer-2025-04.png", description: "新歓用配布チラシ", slug: "flyer-2025-04" },
+  { title: "文化の祭典ポスター", image: "/poster-2025-05.png", description: "文化の祭典ポスター", slug: "poster-2025-05" },
+  // { title: "文化の祭典チラシ", image: "/flyer-2025-05.png", description: "文化の祭典チラシ", slug: "flyer-2025-05" },
+  // { title: "津田沼祭ポスター", image: "/poster-2025-11.png", description: "津田沼祭ポスター", slug: "poster-2025-11" },
+  // { title: "津田沼祭チラシ", image: "/flyer-2025-11.png", description: "津田沼祭チラシ", slug: "flyer-2025-11" },
+  { title: "文化祭カード（2024年版）", image: "/card-2024-11.png", description: "文化祭カード（2024年版）", slug: "card-2024-11" },
+  { title: "サークルメンバー用名札", image: "/name_tag-2025-05.png", description: "サークルメンバー用名札", slug: "name_tag-2025-05" },
+  { title: "番号カード", image: "/number_card.jpg", description: "番号カード", slug: "number_card" },
 ];
 
 export default function Home() {
@@ -136,30 +136,25 @@ export default function Home() {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <h2 className="text-3xl font-semibold mb-4">概要</h2>
-        <p className="text-gray-700 text-base leading-relaxed text-left px-2 md:px-4">
-          このポートフォリオは、大学でのサークル活動におけるデザイン制作の成果を体系的にまとめ、可視化・発信するために制作したものです。
+        <p className="text-gray-700 text-base leading-relaxed text-left">
+          このポートフォリオは、大学でのサークル活動におけるデザイン制作の成果を体系的にまとめ、可視化・発信するために制作したものです。<br/>
         <br/>
+          私は情報科学部情報工学科に所属しており、主にプログラミングやアルゴリズム、ネットワークなどの理工系分野を専門的に学んできました。そのため、講義や課題を通してデザイン分野のアウトプットを直接評価されたり、発表したりする機会は多くありませんでした。<br/>
         <br/>
-          私は情報科学部情報工学科に所属しており、主にプログラミングやアルゴリズム、ネットワークなどの理工系分野を専門的に学んできました。そのため、講義や課題を通してデザイン分野のアウトプットを直接評価されたり、発表したりする機会は多くありませんでした。
+          サークル活動では、ポスターやチラシなど、複数のデザイン制作に携わってきました。そうした制作物や経験を、「技術」と「表現」の両面から自己アピールに活かしたいと考え、このポートフォリオサイトを立ち上げました。<br/>
         <br/>
+          開発にはReactベースのフレームワークであるNext.jsを用い、TypeScriptによる型安全な記述を採用し、静的型チェックを導入することで、保守性と信頼性の高いコードベースを構築しています。フロントエンドのUIにはTailwind CSSを導入することで、デザインの一貫性を保ちながら素早いスタイリングを実現しています。また、framer-motionを使用して各セクションに動きを持たせることで、閲覧者にとって心地よいUXを提供することを意識しました。<br/>
         <br/>
-          サークル活動では、ポスターやチラシなど、複数のデザイン制作に携わってきました。そうした制作物や経験を、「技術」と「表現」の両面から自己アピールに活かしたいと考え、このポートフォリオサイトを立ち上げました。
+          GitHubとの連携を通じて、開発者としての側面も同時にアピールできるように設計しました。<br/>
         <br/>
-        <br/>
-          開発にはReactベースのフレームワークであるNext.jsを用い、TypeScriptによる型安全な記述を採用し、静的型チェックを導入することで、保守性と信頼性の高いコードベースを構築しています。フロントエンドのUIにはTailwind CSSを導入することで、デザインの一貫性を保ちながら素早いスタイリングを実現しています。また、framer-motionを使用して各セクションに動きを持たせることで、閲覧者にとって心地よいUXを提供することを意識しました。
-        <br/>
-        <br/>
-          GitHubとの連携を通じて、開発者としての側面も同時にアピールできるように設計しました。
-        <br/>
-        <br/>
-          このポートフォリオは単なる成果物の展示にとどまらず、情報科学の知見とデザイン経験を横断的に活かしながら、主体的に表現する力を示すための場です。
-        <br/>
+          このポートフォリオは単なる成果物の展示にとどまらず、情報科学の知見とデザイン経験を横断的に活かしながら、主体的に表現する力を示すための場です。<br/>
         <br/>
           就職活動において、デザイン×技術の両面から自分を伝える媒体として活用することを目指しています。
         </p>
       </motion.section>
 
       {/* 個人開発 - WorkCardコンポーネントを利用 */}
+{/*
       <motion.section
         ref={devRef}
         className="px-4 py-16 bg-white max-w-5xl mx-auto"
@@ -171,8 +166,10 @@ export default function Home() {
       >
         <h2 className="text-3xl font-semibold mb-8 text-center">個人開発</h2>
         <p className="text-center text-gray-600 mb-8">クリックすると詳細ページに移動します。</p>
+*/}
 
         {/* devItemsを1つずつWorkCardとしてレンダリング */}
+{/*
         <div className="grid gap-8 md:grid-cols-2">
           {devItems.map((item) => (
             <Link key={item.slug} href={`/dev/${item.slug}`}>
@@ -183,6 +180,7 @@ export default function Home() {
           ))}
         </div>
       </motion.section>
+*/}
 
       {/* サークル活動 - サムネイルを正方形で表示 */}
       <motion.section

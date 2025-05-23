@@ -31,6 +31,16 @@ const circleData: Record<string, { title: string; image: string; description: st
     image: "/flyer-2025-05.png",
     description: "説明文",
   },
+  "poster-2025-11": {
+    title: "タイトルF",
+    image: "/poster-2025-11.png",
+    description: "紹介文F",
+  },
+  "flyer-2025-11": {
+    title: "タイトルG",
+    image: "/flyer-2025-11.png",
+    description: "紹介文G",
+  },
   "card-2024-11": {
     title: "文化祭カード（2024年版）",
     image: "/card-2024-11.png",
@@ -41,19 +51,9 @@ const circleData: Record<string, { title: string; image: string; description: st
     image: "/name_tag-2025-05.png",
     description: "紹介文E",
   },
-  "circle-f": {
-    title: "タイトルF",
-    image: "/noimage.png",
-    description: "紹介文F",
-  },
-  "circle-g": {
-    title: "タイトルG",
-    image: "/noimage.png",
-    description: "紹介文G",
-  },
-  "circle-h": {
+  "number_card": {
     title: "タイトルH",
-    image: "/noimage.png",
+    image: "/number_card.jpg",
     description: "紹介文H",
   },
 };
