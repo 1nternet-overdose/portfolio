@@ -137,7 +137,7 @@ export default function Home() {
         viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <h2 className="text-3xl font-semibold mb-4">概要</h2>
+        <h2 className="text-3xl font-semibold mb-4">このポートフォリオについて</h2>
         <p className="text-gray-700 text-base leading-relaxed text-left">
           このポートフォリオは、大学でのサークル活動におけるデザイン制作の成果を体系的にまとめ、可視化・発信するために制作したものです。<br/>
         <br/>
