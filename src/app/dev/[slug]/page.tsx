@@ -1,7 +1,16 @@
+'use client';
+
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
+
+// 動的パラメータ型（Promiseで包む）
+type PageProps = {
+  params: Promise<{
+    slug: string;
+  }>;
+};
 
 // 事前ビルド用のデータ
 const devData: Record<string, { title: string; image: string; description: string }> = {
@@ -31,9 +40,11 @@ export async function generateStaticParams() {
   return Object.keys(devData).map((slug) => ({ slug }));
 }
 
-export default function Page({ params }: { params: { slug: string } }) {
+export default async function WorkDetailPage(props: PageProps) {
+  const params = await props.params;
   const slug = params.slug as keyof typeof devData;
   const work = devData[slug];
+
   if (!work) notFound();
 
   return (
