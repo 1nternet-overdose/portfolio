@@ -6,11 +6,11 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 // 動的パラメータ型
-{/*
-type Props = {
-  params: { slug: string };
+type PageProps = {
+  params: {
+    slug: string;
+  };
 };
-*/}
 
 // 事前ビルド用のデータ
 const devData: Record<string, { title: string; image: string; description: string }> = {
@@ -36,15 +36,14 @@ const devData: Record<string, { title: string; image: string; description: strin
   },
 };
 
-export default function DevDetailPage({ params }: { params: { slug: string } }) {
+export default function DevDetailPage({ params }: PageProps) {
   const slug = params.slug as keyof typeof devData;
-
   const work = devData[slug];
   if (!work) notFound();
 
   return (
     <motion.div
-      className="max-6xl mx-auto px-4 py-16"
+      className="max-w-6xl mx-auto px-4 py-16"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
