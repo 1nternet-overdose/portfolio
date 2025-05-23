@@ -1,5 +1,3 @@
-'use client';
-
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { motion } from "framer-motion";
