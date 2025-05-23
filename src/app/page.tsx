@@ -7,9 +7,9 @@ import Link from "next/link";
 // アニメーションライブラリ
 import { motion } from "framer-motion";
 // 個人開発セクション用のカードコンポーネント
-import WorkCard from "../components/WorkCard";
+// import WorkCard from "../components/WorkCard";
 // サークル活動セクション用のカードコンポーネント
-import CircleCard from "../components/CircleCard";
+// import CircleCard from "../components/CircleCard";
 // GitHubアイコン
 import { FaGithub } from "react-icons/fa";
 // スクロール参照用のReactフック
@@ -17,6 +17,7 @@ import { FaGithub } from "react-icons/fa";
 import { useRef } from "react";
 
 // 個人開発セクションのデータ配列
+{/*
 const devItems = [
   // { title: "作品タイトル（表示用）", description: "概要", image: "サムネイル画像のパス（publicディレクトリ基準）", slug: "動的ルーティングでURLの末尾として使用される一意の識別子" }
   { title: "小見出しA", description: "紹介文A", image: "/noimage.png", slug: "dev-a" },
@@ -25,6 +26,7 @@ const devItems = [
   { title: "小見出しD", description: "紹介文D", image: "/noimage.png", slug: "dev-d" },
   { title: "小見出しE", description: "紹介文E", image: "/noimage.png", slug: "dev-e" },
 ];
+*/}
 
 // サークル活動セクションのデータ配列
 const circleItems = [
@@ -43,7 +45,7 @@ const circleItems = [
 export default function Home() {
   // 各セクションの参照を定義
   const portfolioRef = useRef(null);
-  const devRef = useRef(null);
+  // const devRef = useRef(null);
   const circleRef = useRef(null);
 
   return (
