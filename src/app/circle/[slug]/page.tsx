@@ -1,9 +1,8 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { motion } from "framer-motion";
 import Link from "next/link";
 
-// データ定義
+// 事前ビルド用のデータ
 const circleData: Record<string, { title: string; image: string; description: string }> = {
   "poster-2025-04": {
     title: "サークル紹介ポスター",
@@ -52,24 +51,17 @@ const circleData: Record<string, { title: string; image: string; description: st
   },
 };
 
-export function generateStaticParams() {
-  return Object.keys(circleData).map((slug) => ({ slug }));
-}
-
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+export default async function WorkDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const work = circleData[slug as keyof typeof circleData];
 
   if (!work) notFound();
 
   return (
-    <motion.div
-      className="max-w-6xl mx-auto px-4 py-16"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+    <div
+      className="max-6xl mx-auto px-4 py-16"
     >
-      <div className="grid md:grid-cols-2 gap-16 items-start">
+      <div className="grid md:grid-cols-2 gap-18 items-start">
         {/* 左側：画像 */}
         <div className="w-full">
           <Image
@@ -80,18 +72,18 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             className="w-full h-auto object-contain rounded shadow"
           />
         </div>
-
+      
         {/* 右側：タイトル・説明 */}
         <div>
           <h1 className="text-3xl font-bold mb-4">{work.title}</h1>
           <p className="text-gray-700 leading-relaxed">{work.description}</p>
         </div>
       </div>
-
+    
       {/* トップに戻る */}
       <Link href="/" className="text-blue-500 hover:underline block mt-12 text-center">
         ← トップに戻る
       </Link>
-    </motion.div>
+    </div>
   );
 }
