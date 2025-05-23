@@ -6,9 +6,11 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 // 動的パラメータ型
+{/*
 type Props = {
   params: { slug: string };
 };
+*/}
 
 // 事前ビルド用のデータ
 const circleData: Record<string, { title: string; image: string; description: string }> = {

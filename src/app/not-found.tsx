@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function NotFound() {
     return (
       <div className="min-h-screen flex flex-col justify-center items-center bg-gray-50 text-center px-4">
@@ -5,12 +7,12 @@ export default function NotFound() {
         <p className="text-gray-700 text-lg mb-8">
           お探しの作品が見つかりませんでした。
         </p>
-        <a
+        <Link
           href="/"
           className="text-blue-500 hover:underline text-lg"
         >
           ← トップページに戻る
-        </a>
+        </Link>
       </div>
     );
   }
