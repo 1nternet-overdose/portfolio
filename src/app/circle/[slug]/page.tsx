@@ -1,18 +1,9 @@
-'use client';
-
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-// 動的パラメータ型
-type PageProps = Promise<{
-  params: {
-    slug: string;
-  };
-}>;
-
-// 事前ビルド用のデータ
+// データ定義
 const circleData: Record<string, { title: string; image: string; description: string }> = {
   "poster-2025-04": {
     title: "サークル紹介ポスター",
@@ -61,8 +52,12 @@ const circleData: Record<string, { title: string; image: string; description: st
   },
 };
 
-export default async function WorkDetailPage(props: PageProps) {
-  const { params } = await props;
+// 修正済みのページコンポーネント
+export default async function WorkDetailPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const slug = params.slug as keyof typeof circleData;
   const work = circleData[slug];
   if (!work) notFound();
