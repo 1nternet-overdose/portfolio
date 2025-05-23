@@ -52,6 +52,10 @@ const circleData: Record<string, { title: string; image: string; description: st
   },
 };
 
+export async function generateStaticParams() {
+  return Object.keys(circleData).map((slug) => ({ slug }));
+}
+
 export default function Page({ params }: { params: { slug: string } }) {
   const slug = params.slug as keyof typeof circleData;
   const work = circleData[slug];

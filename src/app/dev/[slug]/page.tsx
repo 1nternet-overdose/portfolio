@@ -27,6 +27,10 @@ const devData: Record<string, { title: string; image: string; description: strin
   },
 };
 
+export async function generateStaticParams() {
+  return Object.keys(devData).map((slug) => ({ slug }));
+}
+
 export default function Page({ params }: { params: { slug: string } }) {
   const slug = params.slug as keyof typeof devData;
   const work = devData[slug];
